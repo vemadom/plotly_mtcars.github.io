@@ -1,0 +1,22 @@
+---
+title: "Plotly"
+author: "Ivan Vemado Marques"
+date: "11/03/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## MTCARS
+
+```{r, echo = FALSE, error=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+data("mtcars")
+
+plot_ly(mtcars, x = ~as.factor(cyl), y = ~mpg, color = ~as.factor(gear), type = "box") %>% layout(boxmode = "group") %>% layout(xaxis = list( title = "cyl"), legend=list(title=list(text='gear')))
+```
+
+
+## Thanks
